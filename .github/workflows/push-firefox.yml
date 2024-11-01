@@ -17,4 +17,8 @@ jobs:
         npm install
         npm run build:chrome
         ls -a dst
+        gh release create ${{ github.run_number }}.0.0 dst/*.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.TK }}
+      shell: bash
 
